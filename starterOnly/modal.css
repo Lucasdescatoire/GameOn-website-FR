@@ -136,6 +136,42 @@ main {
   padding: 10px;
   font-family: var(--font-slab);
 }
+/* Validation Message */
+
+.modal-confirm {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  height: 100%;
+  text-align: center;
+}
+
+.msg-confirm {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.btn-closed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 2rem;
+  font-size: 1.125rem;
+  color: white;
+  background: #FE142F;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+  .modal-confirm {
+      padding: 2rem;
+      height: calc(100vh - 4rem);
+  }
+}
 
 /* Modal form */
 
@@ -199,6 +235,11 @@ input {
   padding: 8px;
   border: 0.8px solid #ccc;
   outline: none;
+}
+.error-input {
+  margin-bottom: 0.25rem;
+  font-size: 0.8rem;
+  color: #FE142F;
 }
 .text-control {
   margin: 0;
@@ -333,6 +374,9 @@ input[data-error]::after {
   cursor: pointer;
   border: 0;
 }
+
+
+
 /* custom select styles */
 .custom-select {
   position: relative;

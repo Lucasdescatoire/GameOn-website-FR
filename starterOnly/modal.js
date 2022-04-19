@@ -36,6 +36,8 @@ const eventQuantity = document.querySelector("#quantity");
 const eventLocation = document.querySelectorAll(".checkbox-input[name='location']");
 const conditionsOfUse = document.querySelector("#checkbox1");
 
+// element present for the validation message
+const confirmationValidation = document.querySelector("#modal-confirm");
 
 /* Modal Form */
 
@@ -64,7 +66,7 @@ function validateFirstName(firstName) { // first name validation function
       return false;
   } else {
     errorFirstName.style.display = "none";
-      firstName.style.border = "solid #279E7A 2px";
+      firstName.style.border = "none";
       return true;
   }
 }
@@ -76,9 +78,9 @@ function validateLastName(lastName) { // last name validation function
       lastName.style.border = "solid #FE142F 2px";
       return false;
   } else {
-    errorLastName.innerText = "";
-    errorLastName.style.display = "inline-block";
-      lastName.style.border = "solid #279E7A 2px";
+   
+    errorLastName.style.display = "none";
+      lastName.style.border = "none";
       return true;
   }
 }
@@ -91,7 +93,7 @@ function validateEmail(email) { // email validation function
       return false;
   } else {
     errorEmail.style.display = "none";
-      email.style.border = "solid #279E7A 2px";
+      email.style.border = "none";
       return true;
   }
 }
@@ -104,7 +106,7 @@ function validateBirthDate(birthDate) { // birth date validation function
       return false;
   } else {
     errorBirthDate.style.display = "none";
-      birthDate.style.border = "solid #279E7A 2px";
+      birthDate.style.border = "none";
       return true;
   }
 }
@@ -117,7 +119,7 @@ function validateEventQuantity(eventQuantity) { // events quantity validation fu
       return false;
   } else {
     errorEventQuantity.style.display = "none";
-      eventQuantity.style.border = "solid #279E7A 2px";
+      eventQuantity.style.border = "none";
       return true;
   }
 }
@@ -152,7 +154,6 @@ function validateConditionsOfUse(conditionsOfUse) { // conditions of use validat
       return true;
   };
 }
-
 /* Form Validator */
 
 function validate() { // global validation function
@@ -168,7 +169,7 @@ function validate() { // global validation function
 
   if (!isFormValidate.includes(false)) {
       form.style.display = "none"; // remove form
-   
+      confirmationValidation.style.display = "flex"; // show validation message
   }
 }
 
@@ -179,5 +180,10 @@ form.addEventListener("submit", function (e) { // form sending
   e.preventDefault();
   validate();
 });
+
+
+/* Close Validation Message */
+
+document.querySelector("#btn-closed").addEventListener("click", closeModal); // close validation message
 
 
