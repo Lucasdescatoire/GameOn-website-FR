@@ -36,6 +36,7 @@ img {
   padding-right: 1rem;
 }
 
+/* Nav */
 .topnav {
   display: flex;
     align-items: center;
@@ -50,6 +51,7 @@ img {
 .header-logo img {
     max-width: 15vw;
     max-height: 100%;
+    margin-left: 30px;
 }
 .main-navbar {
   display: flex;
@@ -65,8 +67,8 @@ img {
   padding: 12px 12px;
   margin: 5px;
   text-decoration: none;
-  font-size: 20px;
   font-family: Roboto, sans-serif;
+  
 }
 
 .topnav a:hover {
@@ -90,6 +92,7 @@ img {
   .topnav {
       position: relative;
       padding: 1rem 5vw;
+      margin-left: -30px
       
   }
 
@@ -156,6 +159,7 @@ img {
   }
 }
 
+/* Main */
 
 main {
   font-size: 130%;
@@ -346,7 +350,7 @@ input[data-error]::after {
   text-indent: 29px;
   white-space: nowrap;
   position: absolute;
-  left: -30px;
+  left: -50px;
   top: -1px;
   transition: 0.3s;
 }
@@ -432,6 +436,34 @@ input[data-error]::after {
 }
 
 
+@media screen and (max-width: 500px) {
+  .bground {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      overflow: auto;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: white;
+  }
+
+  .content {
+     
+      width: 100%;
+      height: 100%;
+      position: relative;
+      color: white;
+      background-color: #232323;
+      border-radius: 0px;
+      animation-name: modalopen;
+      animation-duration: var(--modal-duration);
+  }
+}
+
 
 /* custom select styles */
 .custom-select {
@@ -505,7 +537,7 @@ input[data-error]::after {
   font-size: 16px;
 }
 .hero-section {
-  min-height: 93vh;
+  min-height: 80vh;
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -536,32 +568,36 @@ input[data-error]::after {
   z-index: 1;
 }
 .hero-headline {
+  margin-bottom: 8vh;
   font-size: 6rem;
-  font-weight: normal;
   white-space: nowrap;
 }
 .hero-text {
-  width: 146%;
+  width: 100%;
   font-weight: normal;
   margin-top: 57px;
   padding: 0;
+  font-size: 1.25rem;
 }
 .btn-signup {
   outline: none;
   text-transform: capitalize;
   font-size: 1.3rem;
-  padding: 15px 23px;
+  padding: 10px 30px;
   margin: 0;
   margin-top: 59px;
+  
 }
 .hero-img {
   grid-column: span 8;
+  height: 100%;
 }
 .hero-img img {
   width: 100%;
   height: 100%;
   display: block;
   padding: 0;
+  object-fit: cover;
 }
 .copyrights {
   color: #fe142f;
@@ -584,9 +620,15 @@ footer {
     box-shadow: unset;
   }
   .hero-content {
+    flex-direction: column;
+    display: flex;
     background: #fff;
     color: #000;
-    padding: 20px;
+    padding: 70px;
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    margin-left: -70px;
   }
   .hero-content::after {
     content: unset;
@@ -595,12 +637,17 @@ footer {
     display: none;
   }
   .hero-headline {
-    font-size: 4.5rem;
+    display: inline-block;
+    margin-bottom: 0rem;
+    height: 100%;
+    font-size: 3.0rem;
     white-space: normal;
+    text-decoration: solid;
+    
   }
   .hero-text {
-    width: unset;
-    font-size: 1.5rem;
+    margin-bottom: 0rem;
+    font-size: 1rem;
   }
   .hero-img img {
     border-radius: 10px;
