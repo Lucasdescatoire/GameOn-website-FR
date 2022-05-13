@@ -17,7 +17,7 @@
   <body>
 
     <!--nav-->
-    <div class="topnav" id="myTopnav">
+    <div class="topnav " id="myTopnav">
       <div class="header-logo">
       <img alt="logo" src="Logo.png" width="auto" height="auto" />
     </div>
@@ -56,10 +56,12 @@
       </div>
 <!-- form modal -->
       <div class="bground">
-        <div class="content">
+        <div class="content ">
+          
           <span class="close"></span>
           <div class="modal-body">
             <form 
+            id="myform"
             class="form" 
             name="reserve"
             action="index.html"
@@ -125,14 +127,15 @@
                 <input
                   class="checkbox-input"
                   type="radio"
-                  id="location1"
+                  id="location1"  
                   name="location"
                   value="New York"
                 />
                 <label class="checkbox-label" for="location1">
                   <span class="checkbox-icon"></span>
-                  New York</label
+                  New York </label
                 >
+                
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -223,7 +226,8 @@
              <!-- Validation Message -->
              <div class="modal-confirm" id="modal-confirm">
               <p class="msg-confirm" id="msg-confirm">Merci pour votre inscription </p>
-              <button class="btn-closed" id="btn-closed">Fermer</button>
+              
+              <input type = "button" class="btn-closed" id="btn-closed" value = "Fermer" 
           </div>
 
             
@@ -240,3 +244,5 @@
     <script src="modal.js"></script>
   </body>
 </html>
+
+

@@ -50,6 +50,7 @@ function launchModal() { // launch modal form
 closeModalBtn.addEventListener("click", closeModal); // close modal event
 
 function closeModal() { // close modal form
+  form.reset();
     modalbg.style.display = "none";
     form.style.display = "block";
     confirmationValidation.style.display = "none";
@@ -158,6 +159,7 @@ function validateConditionsOfUse(conditionsOfUse) { // conditions of use validat
 
 function validate() { // global validation function
   let isFormValidate = [];
+  
 
   isFormValidate.push(validateFirstName(firstName));
   isFormValidate.push(validateLastName(lastName));
@@ -168,6 +170,7 @@ function validate() { // global validation function
   isFormValidate.push(validateConditionsOfUse(conditionsOfUse));
 
   if (!isFormValidate.includes(false)) {
+    form.reset();
       form.style.display = "none"; // remove form
       confirmationValidation.style.display = "flex"; // show validation message
   }
@@ -184,6 +187,5 @@ form.addEventListener("submit", function (e) { // form sending
 
 /* Close Validation Message */
 
-document.querySelector("#btn-closed").addEventListener("click", closeModal); // close validation message
-
+document.querySelector("#btn-closed").addEventListener("click", closeModal); // close validation message (+ reset ?)
 
